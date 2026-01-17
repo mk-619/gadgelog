@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>学び on gadgelog</title>
+    <link>http://localhost:1313/manabi/</link>
+    <description>Recent content in 学び on gadgelog</description>
+    <generator>Hugo</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Sat, 17 Jan 2026 14:12:57 +0900</lastBuildDate>
+    <atom:link href="http://localhost:1313/manabi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test</title>
+      <link>http://localhost:1313/manabi/test/</link>
+      <pubDate>Sat, 17 Jan 2026 14:12:57 +0900</pubDate>
+      <guid>http://localhost:1313/manabi/test/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

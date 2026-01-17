@@ -1,0 +1,28 @@
+baseURL = "http://localhost/"
+languageCode = "ja-jp"
+title = "gadgelog"
+theme = "ananke"
+
+[params]
+  description = "gadgelogとは，学びと記録のために，日々を綴るガジェット好きの備忘録です．"
+
+[menu]
+  [[menu.main]]
+    name = "自己紹介"
+    url = "/about/"
+    weight = 10
+
+  [[menu.main]]
+    name = "学び"
+    url = "/manabi/"
+    weight = 20
+
+  [[menu.main]]
+    name = "ガジェット"
+    url = "/gadget/"
+    weight = 30
+
+  [[menu.main]]
+    name = "記録"
+    url = "/kiroku/"
+    weight = 40
