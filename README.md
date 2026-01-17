@@ -232,7 +232,9 @@ git status
 ## ローカルでの起動方法
 プロジェクト直下で次を実行する． 
 
-`hugo server -D`
+```bash
+hugo server -D
+```
 
 ブラウザで次にアクセスする．  
 
