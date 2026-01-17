@@ -1,4 +1,6 @@
 baseURL = "https://mk-619.github.io/gadgelog/"
+relativeURLs = true
+canonifyURLs = true
 languageCode = "ja-jp"
 title = "gadgelog"
 theme = "ananke"
