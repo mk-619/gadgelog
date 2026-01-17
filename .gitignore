@@ -1,0 +1,26 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# macOS system directories
+.Spotlight-V100
+.Trashes
+.fseventsd
+.VolumeIcon.icns
+
+# Hugo
+/public/
+/resources/
+
+# Hugo lock file（必要なら除外）
+.hugo_build.lock
+
+# Editor / IDE
+.vscode/
+.idea/
+
+# Temporary files
+*.swp
+*~
