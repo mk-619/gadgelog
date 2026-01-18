@@ -233,7 +233,7 @@ git status
 プロジェクト直下で次を実行する． 
 
 ```bash
-hugo server -D
+hugo server -D --baseURL "http://localhost:1313/" --appendPort=false
 ```
 
 ブラウザで次にアクセスする．  
