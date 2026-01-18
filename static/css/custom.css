@@ -1,0 +1,129 @@
+/* Newsroom-like, light and readable */
+
+:root{
+  --bg: #f5f5f7;
+  --surface: rgba(255,255,255,0.92);
+  --text: #111111;
+  --muted: #6b7280;
+  --border: rgba(17,24,39,0.12);
+  --shadow: 0 1px 2px rgba(0,0,0,0.06), 0 10px 30px rgba(0,0,0,0.08);
+  --radius: 16px;
+  --accent: #0a84ff;
+}
+
+html{
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+html, body{
+  background: var(--bg) !important;
+  color: var(--text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans JP", "Hiragino Sans", "Yu Gothic",
+    sans-serif;
+  line-height: 1.85;
+  letter-spacing: 0.01em;
+}
+
+/* Keep content width calm */
+.measure{
+  max-width: 880px !important;
+}
+
+/* Links */
+a{
+  color: var(--accent) !important;
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: underline;
+}
+
+/* Headings */
+h1, h2, h3{
+  letter-spacing: -0.02em;
+}
+h1{
+  font-size: clamp(32px, 4vw, 44px);
+  line-height: 1.15;
+}
+h2{
+  font-size: clamp(22px, 2.2vw, 28px);
+  line-height: 1.25;
+}
+
+/* Neutralize theme background utility classes that fight our bg */
+.bg-near-white,
+.bg-white,
+.bg-black-80,
+.bg-near-black{
+  background: transparent !important;
+}
+
+/* Cards */
+article{
+  background: var(--surface) !important;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  margin: 16px 0 !important;
+}
+
+article .pa3,
+article .pa4-ns{
+  padding: 18px 20px !important;
+}
+
+/* Date line */
+article time,
+article .f6,
+article .mid-gray,
+article .gray{
+  color: var(--muted) !important;
+}
+
+/* Title in cards */
+article h3 a,
+article h2 a{
+  color: var(--text) !important;
+}
+article h3 a:hover,
+article h2 a:hover{
+  color: var(--accent) !important;
+}
+
+/* Navbar: translucent */
+nav{
+  background: rgba(255,255,255,0.72) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+nav a{
+  color: var(--text) !important;
+}
+nav a:hover{
+  color: var(--accent) !important;
+}
+
+/* Article page readability */
+main p{
+  max-width: 76ch;
+}
+pre, code{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+pre{
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  padding: 14px 16px;
+  overflow: auto;
+}
+blockquote{
+  border-left: 3px solid var(--border);
+  padding-left: 14px;
+  color: rgba(17,17,17,0.78);
+}
+

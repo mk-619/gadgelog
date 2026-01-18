@@ -8,21 +8,21 @@ theme = "ananke"
 
 [menu]
   [[menu.main]]
-    name = "自己紹介"
+    name = "About"
     url = "/about/"
     weight = 10
 
   [[menu.main]]
-    name = "学び"
-    url = "/manabi/"
+    name = "Study"
+    url = "/study/"
     weight = 20
 
   [[menu.main]]
-    name = "ガジェット"
+    name = "gadget"
     url = "/gadget/"
     weight = 30
 
   [[menu.main]]
-    name = "記録"
-    url = "/kiroku/"
+    name = "Record"
+    url = "/record/"
     weight = 40

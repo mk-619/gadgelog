@@ -1,0 +1,31 @@
+{{ define "main" }}
+<main class="pb6">
+  <section class="measure center ph3 pv4">
+    <h1 class="f1-ns f2 lh-title ma0">{{ .Site.Title }}</h1>
+
+    <p class="f4-ns f5 lh-copy mt3 mb3 mid-gray">
+      gadgelogとは，学びと記録のために，日々を綴るガジェット好きの備忘録です．
+    </p>
+
+    <p class="mt0">
+      <a class="link" href="{{ "/about/" | relURL }}">About</a>
+    </p>
+  </section>
+
+  <section class="measure center ph3">
+    <h2 class="f3 mt0 mb3">Recent</h2>
+
+    {{ $pages := where .Site.RegularPages "Type" "in" (slice "gadget" "study" "record") }}
+    {{ range first 5 (sort $pages "Date" "desc") }}
+      <article class="mb3 pa3 pa4-ns">
+        <p class="f6 mt0 mb2 mid-gray">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+        </p>
+        <h3 class="f3 mt0 mb0">
+          <a class="link" href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </h3>
+      </article>
+    {{ end }}
+  </section>
+</main>
+{{ end }}
