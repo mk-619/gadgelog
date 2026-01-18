@@ -3,12 +3,15 @@
 :root{
   --bg: #f5f5f7;
   --surface: rgba(255,255,255,0.92);
-  --text: #111111;
+  --text: #111;
   --muted: #6b7280;
   --border: rgba(17,24,39,0.12);
   --shadow: 0 1px 2px rgba(0,0,0,0.06), 0 10px 30px rgba(0,0,0,0.08);
   --radius: 16px;
   --accent: #0a84ff;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  --glass: rgba(255,255,255,0.72);
+  --glass-blur: blur(14px);
 }
 
 html{
@@ -17,7 +20,7 @@ html{
 }
 
 html, body{
-  background: var(--bg) !important;
+  background: var(--bg);
   color: var(--text);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, "Noto Sans JP", "Hiragino Sans", "Yu Gothic",
@@ -26,14 +29,14 @@ html, body{
   letter-spacing: 0.01em;
 }
 
-/* Keep content width calm */
+/* Layout width */
 .measure{
-  max-width: 880px !important;
+  max-width: 880px;
 }
 
 /* Links */
 a{
-  color: var(--accent) !important;
+  color: var(--accent);
   text-decoration: none;
 }
 a:hover{
@@ -53,67 +56,50 @@ h2{
   line-height: 1.25;
 }
 
-/* Neutralize theme background utility classes that fight our bg */
+/* Neutralize theme background utilities that fight our bg */
 .bg-near-white,
 .bg-white,
 .bg-black-80,
 .bg-near-black{
-  background: transparent !important;
+  background: transparent;
 }
 
 /* Cards */
 article{
-  background: var(--surface) !important;
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   overflow: hidden;
-  margin: 16px 0 !important;
+  margin: 16px 0;
 }
-
 article .pa3,
 article .pa4-ns{
-  padding: 18px 20px !important;
+  padding: 18px 20px;
 }
 
-/* Date line */
+/* Card meta + title */
 article time,
 article .f6,
 article .mid-gray,
 article .gray{
-  color: var(--muted) !important;
+  color: var(--muted);
+}
+article h2 a,
+article h3 a{
+  color: var(--text);
+}
+article h2 a:hover,
+article h3 a:hover{
+  color: var(--accent);
 }
 
-/* Title in cards */
-article h3 a,
-article h2 a{
-  color: var(--text) !important;
-}
-article h3 a:hover,
-article h2 a:hover{
-  color: var(--accent) !important;
-}
-
-/* Navbar: translucent */
-nav{
-  background: rgba(255,255,255,0.72) !important;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--border);
-}
-nav a{
-  color: var(--text) !important;
-}
-nav a:hover{
-  color: var(--accent) !important;
-}
-
-/* Article page readability */
+/* Typography readability */
 main p{
   max-width: 76ch;
 }
 pre, code{
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-family: var(--mono);
 }
 pre{
   border-radius: 12px;
@@ -127,3 +113,67 @@ blockquote{
   color: rgba(17,17,17,0.78);
 }
 
+/* =========================
+   Header / Navbar
+   ========================= */
+
+/* Glass header base */
+.site-header{
+  background: var(--glass);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Prevent "double lines" inside header (Tachyons borders) */
+.site-header .bb,
+.site-header .bt,
+.site-header .br,
+.site-header .bl{
+  border: 0 !important;
+}
+
+/* Header inner layout: title left, menu right */
+.site-header .flex-l{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Disable centering constraints only inside header */
+.site-header .center,
+.site-header .measure{
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Brand (left gadgelog): do not rely on .site-title */
+.site-header nav > div > a:first-child{
+  font-weight: 800;
+  font-size: 1.4rem;
+  letter-spacing: 0.08em;
+  margin-right: auto;
+  color: var(--text);
+  text-decoration: none;
+}
+
+/* Menu links */
+.site-header nav a{
+  color: var(--text);
+  text-decoration: none;
+}
+.site-header nav a:hover{
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* Menu spacing (keep only for menu items, not brand) */
+.site-header nav ul a{
+  margin-left: 16px;
+}
+
+/* Optional: active menu item (works only if aria-current is present) */
+.site-header nav a[aria-current="page"]{
+  font-weight: 700;
+}

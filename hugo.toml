@@ -8,8 +8,13 @@ theme = "ananke"
 
 [menu]
   [[menu.main]]
-    name = "About"
-    url = "/about/"
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+   name = "gadget"
+    url = "/gadget/"
     weight = 10
 
   [[menu.main]]
@@ -18,11 +23,11 @@ theme = "ananke"
     weight = 20
 
   [[menu.main]]
-    name = "gadget"
-    url = "/gadget/"
+    name = "Record"
+    url = "/record/"
     weight = 30
 
   [[menu.main]]
-    name = "Record"
-    url = "/record/"
+    name = "About"
+    url = "/about/"
     weight = 40
